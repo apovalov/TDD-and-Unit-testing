@@ -17,6 +17,10 @@
 		FA8E80782396529200793CBA /* ToDoApp_TDD_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8E80772396529200793CBA /* ToDoApp_TDD_UITests.swift */; };
 		FA8E808A239655AA00793CBA /* TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8E8089239655AA00793CBA /* TaskTests.swift */; };
 		FA8E808D239656B900793CBA /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8E808C239656B900793CBA /* Task.swift */; };
+		FA8E808F2396BF1E00793CBA /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8E808E2396BF1E00793CBA /* Location.swift */; };
+		FA8E80912396C04600793CBA /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8E80902396C04600793CBA /* Location.swift */; };
+		FA8E80942396D76700793CBA /* TaskManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8E80932396D76700793CBA /* TaskManagerTests.swift */; };
+		FA8E80972396D7CC00793CBA /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8E80962396D7CC00793CBA /* TaskManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		FA8E80792396529200793CBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA8E8089239655AA00793CBA /* TaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTests.swift; sourceTree = "<group>"; };
 		FA8E808C239656B900793CBA /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		FA8E808E2396BF1E00793CBA /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		FA8E80902396C04600793CBA /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		FA8E80932396D76700793CBA /* TaskManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagerTests.swift; sourceTree = "<group>"; };
+		FA8E80962396D7CC00793CBA /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,7 @@
 		FA8E80542396528F00793CBA /* ToDoApp_TDD */ = {
 			isa = PBXGroup;
 			children = (
+				FA8E80952396D7BC00793CBA /* Manager */,
 				FA8E8088239653D700793CBA /* Supporting files */,
 				FA8E80872396538900793CBA /* Controller */,
 				FA8E80862396538300793CBA /* View */,
@@ -114,6 +123,7 @@
 		FA8E806B2396529200793CBA /* ToDoApp(TDD)Tests */ = {
 			isa = PBXGroup;
 			children = (
+				FA8E80922396D73C00793CBA /* Manager */,
 				FA8E806C2396529200793CBA /* ToDoApp_TDD_Tests.swift */,
 				FA8E806E2396529200793CBA /* Info.plist */,
 				FA8E808B239655C900793CBA /* Model */,
@@ -134,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				FA8E808C239656B900793CBA /* Task.swift */,
+				FA8E808E2396BF1E00793CBA /* Location.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -170,8 +181,25 @@
 			isa = PBXGroup;
 			children = (
 				FA8E8089239655AA00793CBA /* TaskTests.swift */,
+				FA8E80902396C04600793CBA /* Location.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FA8E80922396D73C00793CBA /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				FA8E80932396D76700793CBA /* TaskManagerTests.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		FA8E80952396D7BC00793CBA /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				FA8E80962396D7CC00793CBA /* TaskManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,8 +333,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA8E80972396D7CC00793CBA /* TaskManager.swift in Sources */,
 				FA8E808D239656B900793CBA /* Task.swift in Sources */,
 				FA8E805A2396528F00793CBA /* ViewController.swift in Sources */,
+				FA8E808F2396BF1E00793CBA /* Location.swift in Sources */,
 				FA8E80562396528F00793CBA /* AppDelegate.swift in Sources */,
 				FA8E80582396528F00793CBA /* SceneDelegate.swift in Sources */,
 			);
@@ -317,6 +347,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA8E808A239655AA00793CBA /* TaskTests.swift in Sources */,
+				FA8E80912396C04600793CBA /* Location.swift in Sources */,
+				FA8E80942396D76700793CBA /* TaskManagerTests.swift in Sources */,
 				FA8E806D2396529200793CBA /* ToDoApp_TDD_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -564,7 +596,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AGN42K77RS;
-				INFOPLIST_FILE = "ToDoApp(TDD)UITests/Info.plist";
+				INFOPLIST_FILE = "ToDoApp(TDD)Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -572,9 +604,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bignerdranch.ToDoApp-TDD-UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "ToDoApp(TDD)";
+				TEST_TARGET_NAME = ToDoApp_TDD;
 			};
 			name = Debug;
 		};
@@ -584,7 +617,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AGN42K77RS;
-				INFOPLIST_FILE = "ToDoApp(TDD)UITests/Info.plist";
+				INFOPLIST_FILE = "ToDoApp(TDD)Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -592,9 +625,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bignerdranch.ToDoApp-TDD-UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "ToDoApp(TDD)";
+				TEST_TARGET_NAME = ToDoApp_TDD;
 			};
 			name = Release;
 		};

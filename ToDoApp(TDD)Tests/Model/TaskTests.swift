@@ -15,4 +15,35 @@ class TaskTests: XCTestCase {
         let task = Task(title: "Foo")
         XCTAssertNotNil(task)
     }
+
+    func testInitTAskWithTitleAndDescription() {
+        let task = Task(title: "Foo", description: "Bar")
+        XCTAssertNotNil(task)
+    }
+    
+    func testWhenGivenDescriptionSetsTitle() {
+        let task = Task(title: "Foo")
+        XCTAssertEqual(task.title, "Foo")
+    }
+    
+    func testWhenGivenDescriptionSetsDescription() {
+        let task = Task(title: "Foo", description: "Description")
+        XCTAssertEqual(task.description, "Description")
+    }
+    
+    func testTaskInitsWithDate() {
+        let task = Task(title: "Foo")
+        XCTAssertNotNil(task.date)
+    }
+    
+    
+    func testWhenGivenLocationSetsDescription() {
+        let location = Location(name: "Foo")
+        
+        let task = Task(title: "Bar",
+                        description: "Baz",
+                        location: location)
+        
+        XCTAssertEqual(task.location, location)
+    }
 }
