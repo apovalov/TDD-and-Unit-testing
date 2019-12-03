@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import ToDoApp_TDD_
+@testable import ToDoApp_TDD
 
 class ToDoApp_TDD_Tests: XCTestCase {
 
