@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum Section: Int {
+enum Section: Int, CaseIterable {
     case todo
     case done
 }
@@ -18,7 +18,15 @@ class DataProvider: NSObject {
 }
 
 extension DataProvider: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+
+        guard let section = Section(rawValue: indexPath.section) else { fatalError() }
+
+        switch section {
+        case .todo: return "Done"
+        case .done: return "Undone"
+        }
+    }
 }
 
 extension DataProvider: UITableViewDataSource {
@@ -27,7 +35,7 @@ extension DataProvider: UITableViewDataSource {
         guard let section = Section(rawValue: section) else {
             fatalError()}
         
-        guard let taskManager = taskManager else { return 0}
+        guard let taskManager = taskManager else { return 0 }
         switch section {
         case .todo: return taskManager.tasksCount
         case .done: return taskManager.doneTasksCount
@@ -35,10 +43,36 @@ extension DataProvider: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return TaskCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TaskCell.self ), for: indexPath) as! TaskCell
+        guard let section = Section(rawValue: indexPath.section) else {
+            fatalError()}
+        
+        var task: Task!
+        switch section {
+        case .todo: task = taskManager?.task(at: indexPath.row)
+        case .done: task = taskManager?.doneTask(at: indexPath.row)
+        }
+        
+        if let task = task {
+            cell.configure(withTask: task)
+        }
+        return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return Section.allCases.count
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        guard let section = Section(rawValue: indexPath.section) else { fatalError() }
+
+          switch section {
+          case .todo: taskManager?.checkTask(at: indexPath.row)
+          case .done: taskManager?.unCheckTask(at: indexPath.row)
+          }
+        
+        tableView.reloadData()
+        
     }
 }

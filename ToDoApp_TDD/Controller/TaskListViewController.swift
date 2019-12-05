@@ -16,7 +16,5 @@ class TaskListViewController: UIViewController {
         super.viewDidLoad()
 
     }
-    
-    
 }
 
