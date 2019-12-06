@@ -33,7 +33,12 @@ class NewTaskViewController: UIViewController {
             let task = Task(title: titleString!, description: descriptionString, date: dateString, location: location)
             
             self.taskManager.add(task: task)
+            DispatchQueue.main.async {
+            self.dismiss(animated: true, completion: nil)
+            }
         }
+        
+        
     }
     var taskManager: TaskManager!
     var geocoder = CLGeocoder()

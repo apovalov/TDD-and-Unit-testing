@@ -16,7 +16,7 @@ class NewTaskViewControllerTests: XCTestCase {
     var placemark: MockCLPlacemark!
     
     override func setUp() {
-        
+        super.setUp()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         sut = storyboard.instantiateViewController(withIdentifier: String(describing: NewTaskViewController.self)) as? NewTaskViewController
@@ -115,6 +115,29 @@ class NewTaskViewControllerTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
     }
     
+    func testSaveDismissesNewTaskViewController() {
+        
+        //given
+        let mockNewTaskViewController = MockNewTaskViewController()
+        mockNewTaskViewController.titleTextField = UITextField()
+        mockNewTaskViewController.titleTextField.text = "Foo"
+        mockNewTaskViewController.descriptionTextField = UITextField()
+        mockNewTaskViewController.descriptionTextField.text = "Bar"
+        mockNewTaskViewController.locationTextField = UITextField()
+        mockNewTaskViewController.locationTextField.text = "Baz"
+        mockNewTaskViewController.addressTextField = UITextField()
+        mockNewTaskViewController.addressTextField.text = "New York"
+        mockNewTaskViewController.dateTextField = UITextField()
+        mockNewTaskViewController.dateTextField.text = "01.01.09"
+        
+        //when
+        mockNewTaskViewController.save()
+        
+        //then
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+        XCTAssertTrue(mockNewTaskViewController.isDismissed)
+        }
+    }
 }
 
 extension NewTaskViewControllerTests {
@@ -135,3 +158,14 @@ extension NewTaskViewControllerTests {
         }
     }
 }
+
+extension NewTaskViewControllerTests {
+    class MockNewTaskViewController: NewTaskViewController {
+        var isDismissed = false
+        
+        override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+            isDismissed = true
+        }
+    }
+}
+ 

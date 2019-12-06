@@ -15,7 +15,7 @@ class DetailViewControllerTest: XCTestCase {
     var sut: DetailViewController!
     
     override func setUp() {
-        
+        super.setUp()
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         sut = storyboard.instantiateViewController(identifier: String(describing: DetailViewController.self)) as? DetailViewController
         sut.loadViewIfNeeded()    }
@@ -92,10 +92,10 @@ class DetailViewControllerTest: XCTestCase {
     func testSettingTaskSetsMapView() {
         setupTaskAndAppearanceransition()
         XCTAssertEqual(sut.mapView.centerCoordinate.latitude,
-                       40.7143528,
+                       40.755931,
                        accuracy: 0.001)
         XCTAssertEqual(sut.mapView.centerCoordinate.longitude,
-                       -74.0059731,
+                       -73.984606,
                        accuracy: 0.001)
     }
 }

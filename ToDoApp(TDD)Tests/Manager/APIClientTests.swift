@@ -15,6 +15,7 @@ class APIClientTests: XCTestCase {
     var sut: APIClient!
     
     override func setUp() {
+        super.setUp()
         mockURLSession = MockURLSession(data: nil, urlResponse: nil, responseError: nil)
         sut = APIClient()
         sut.urlSession = mockURLSession
