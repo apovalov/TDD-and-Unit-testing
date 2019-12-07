@@ -13,12 +13,35 @@ struct Location {
     let name: String
     let coordinate: CLLocationCoordinate2D?
     
+    var dict: [String : Any] {
+        var dict: [String : Any] = [:]
+        dict["name"] = name
+        if let coordinate = coordinate {
+            dict["latitude"] = coordinate.latitude
+            dict["longitude"] = coordinate.longitude
+        }
+        return dict
+    }
+    
     init(name: String, coordinate: CLLocationCoordinate2D? = nil) {
         self.name = name
         self.coordinate = coordinate
     }
 }
 
+extension  Location {
+    typealias PlistDict = [String : Any]
+    init?(dict: PlistDict) {
+        self.name = dict["name"] as! String
+        if
+            let latitude = dict["latitude"] as? Double,
+            let longitude = dict["longitude"] as? Double {
+            self.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        } else {
+            self.coordinate = nil
+        }
+    }
+}
 
 extension Location: Equatable {
     static func == (lhs: Location, rhs: Location) -> Bool {

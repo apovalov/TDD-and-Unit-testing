@@ -32,7 +32,7 @@
 		FADC6EF6239A738B00155CF8 /* String + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC6EF5239A738B00155CF8 /* String + Extensions.swift */; };
 		FADC6EF8239A755900155CF8 /* TaskListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC6EF7239A755900155CF8 /* TaskListViewControllerTests.swift */; };
 		FADC6EFA239A758C00155CF8 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC6EF9239A758C00155CF8 /* Location.swift */; };
-		FADC6EFE239A760400155CF8 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC6EFD239A760400155CF8 /* Location.swift */; };
+		FADC6EFE239A760400155CF8 /* LocationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADC6EFD239A760400155CF8 /* LocationTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +84,7 @@
 		FADC6EF5239A738B00155CF8 /* String + Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String + Extensions.swift"; sourceTree = "<group>"; };
 		FADC6EF7239A755900155CF8 /* TaskListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewControllerTests.swift; sourceTree = "<group>"; };
 		FADC6EF9239A758C00155CF8 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		FADC6EFD239A760400155CF8 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		FADC6EFD239A760400155CF8 /* LocationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,7 +219,7 @@
 		FA8E808B239655C900793CBA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FADC6EFD239A760400155CF8 /* Location.swift */,
+				FADC6EFD239A760400155CF8 /* LocationTest.swift */,
 				FA8E8089239655AA00793CBA /* TaskTests.swift */,
 			);
 			path = Model;
@@ -422,7 +422,7 @@
 			files = (
 				FA8E808A239655AA00793CBA /* TaskTests.swift in Sources */,
 				FADC6EF8239A755900155CF8 /* TaskListViewControllerTests.swift in Sources */,
-				FADC6EFE239A760400155CF8 /* Location.swift in Sources */,
+				FADC6EFE239A760400155CF8 /* LocationTest.swift in Sources */,
 				FA8E80A523984A0500793CBA /* TaskCellTests.swift in Sources */,
 				FA55177123992FB900050202 /* APIClientTests.swift in Sources */,
 				FA55176D23986BC900050202 /* NewTaskViewControllerTests.swift in Sources */,
